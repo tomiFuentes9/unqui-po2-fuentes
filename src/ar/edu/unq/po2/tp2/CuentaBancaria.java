@@ -3,6 +3,7 @@ package ar.edu.unq.po2.tp2;
 public class CuentaBancaria {
 	private String titular;
 	private float saldo;
+	private String cbu;
 
 	public CuentaBancaria(String titular, float saldo) {
 		super();

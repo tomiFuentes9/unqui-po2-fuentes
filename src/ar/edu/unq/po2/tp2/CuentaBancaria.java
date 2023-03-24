@@ -9,6 +9,11 @@ public class CuentaBancaria {
 		this.titular = titular;
 		this.saldo = saldo;
 	}
+	
+	public void depositar(float dinero) {
+		saldo += dinero;
+	}
+	
 
 	public String getTitular() {
 		return titular;

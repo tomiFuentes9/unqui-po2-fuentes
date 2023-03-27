@@ -40,12 +40,7 @@ public class Empleado {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	public float getFechaDeNacimiento() {
-		return fechaDeNacimiento;
-	}
-	public void setFechaDeNacimiento(float fechaDeNacimiento) {
-		this.fechaDeNacimiento = fechaDeNacimiento;
-	}
+
 	public float getSueldoBasico() {
 		return sueldoBasico;
 	}

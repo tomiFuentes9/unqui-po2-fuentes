@@ -2,15 +2,26 @@ package ar.edu.unq.po2.tp2;
 import ar.edu.unq.po2.tp2.*;
 
 
-public class Empleado {
+public abstract class Empleado {
 	private String nombre;
 	private String direccion;
 	private String estadoCivil;
 	private float  fechaDeNacimiento; //año unicamente?
 	private float  sueldoBasico;
 	
-	public float calcularEdad(float anoActual) {
-		return anoActual - this.fechaDeNacimiento;
+	public float calcularEdad() {
+		return 0 - this.fechaDeNacimiento; //ver como conseguir la fecha actual y en base a eso ver como calcular la edad
+	}
+	
+	public abstract double calcularBruto();
+	
+	public abstract double calcularRetenciones();
+	
+	public abstract double calcularNeto();
+	
+	
+	public double calcBaseObraSocial() {
+		return (this.calcularBruto() * 0.10);
 	}
 	
 	public Empleado(String nombre, String direccion, String estadoCivil, float fechaDeNacimiento, float sueldoBasico) {
@@ -23,27 +34,21 @@ public class Empleado {
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+	
 	public String getEstadoCivil() {
 		return estadoCivil;
 	}
-	public void setEstadoCivil(String estadoCivil) {
-		this.estadoCivil = estadoCivil;
-	}
-
+	
 	public float getSueldoBasico() {
 		return sueldoBasico;
 	}
+	
 	public void setSueldoBasico(float sueldoBasico) {
 		this.sueldoBasico = sueldoBasico;
 	}

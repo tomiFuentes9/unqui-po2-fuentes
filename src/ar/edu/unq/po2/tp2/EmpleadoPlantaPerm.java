@@ -51,13 +51,13 @@ public class EmpleadoPlantaPerm extends Empleado{
 		return this.calcularBruto() - this.calcularRetenciones();
 	}
 	
-	public EmpleadoPlantaPerm(String nombre, String direccion, String estadoCivil, float fechaDeNacimiento,
-			                  float sueldoBasico, float cantHijos, float antiguedad) {
+
+	public EmpleadoPlantaPerm(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
+			float sueldoBasico, double cantHijos, double antiguedad) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;
 	}
-
 
 	public double getCantHijos() {
 		return cantHijos;

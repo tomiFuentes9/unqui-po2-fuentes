@@ -18,7 +18,7 @@ public class EmpleadoPlantaTemp extends Empleado{
 	
 	public double cincuentaOMas() {
 		double res;
-		if (this.calcularEdad() >= 50) {
+		if (this.calcularEdad(2023) >= 50) {
 			res = 25;
 		}else {
 			res = 0;
@@ -39,7 +39,7 @@ public class EmpleadoPlantaTemp extends Empleado{
 	}
 	
 	
-	public EmpleadoPlantaTemp(String nombre, String direccion, String estadoCivil, float fechaDeNacimiento,
+	public EmpleadoPlantaTemp(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
 			float sueldoBasico, String finDesignaciónPlantaTemp, float cantHorasExtra) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.finDesignaciónPlantaTemp = finDesignaciónPlantaTemp;

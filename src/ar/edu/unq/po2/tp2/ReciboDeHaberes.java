@@ -22,4 +22,5 @@ public abstract class ReciboDeHaberes {
 	}
 	
 	
+	//Hacer metodo para mostrar recibo de haberes para revisar que se pasen bien los datos
 }

@@ -8,6 +8,9 @@ public class Empresa {
 	private int cuit;
 	private List<Empleado> empleados;
 	
+	public void liquidacionDeSueldos() {
+		//Averiguar sobre como recorrer coleccion de empleados y hacer una especie de foreach para instanciar un recibo por cada empleado.
+	}
 	
 	public float calcularMontoTotalBruto() {
 		return 0;

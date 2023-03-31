@@ -1,4 +1,5 @@
 package ar.edu.unq.po2.tp2;
+import ar.edu.unq.po2.tp2.*;
 import java.util.*;
 import ar.edu.unq.po2.tp2.*;
 
@@ -9,19 +10,35 @@ public class Empresa {
 	private List<Empleado> empleados;
 	
 	public void liquidacionDeSueldos() {
-		//Averiguar sobre como recorrer coleccion de empleados y hacer una especie de foreach para instanciar un recibo por cada empleado.
+		for (Empleado empleado : empleados) {
+			this.generarReciboDeHaberes(empleado);
+		}
+	}
+	
+	public void generarReciboDeHaberes(Empleado emp) {
+		/*if (emp.getSueldoBasico() > 200) {
+			//como instanciar bien
+		}*/
 	}
 	
 	public float calcularMontoTotalBruto() {
-		return 0;
+		int res = 0;
+		for(Empleado empleado: empleados) {
+			res += empleado.calcularBruto();
+		}
+		return res;
 	}
 	
 	public float calcularMontoTotalRetenciones() {
-		return 0;
+		int res = 0;
+		for(Empleado empleado: empleados) {
+			res += empleado.calcularRetenciones();
+		}
+		return res;
 	}
 	
 	public float calcularMontoTotalNeto() {
-		return 0;
+		return this.calcularMontoTotalBruto() - this.calcularMontoTotalRetenciones();
 	}
 	
 

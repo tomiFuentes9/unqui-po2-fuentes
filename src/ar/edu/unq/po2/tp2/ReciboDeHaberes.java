@@ -1,16 +1,19 @@
 package ar.edu.unq.po2.tp2;
+import ar.edu.unq.po2.tp2.*;
+import java.util.*;
 
 public abstract class ReciboDeHaberes {
 	
 	private String nombreEmp;
 	private String direccion;
-	private String fechaEmision;
-	private float sBruto;
-	private float sNeto;
-	private float obraSocial;
-	private float aportesJub;
-	public ReciboDeHaberes(String nombreEmp, String direccion, String fechaEmision, float sBruto, float sNeto,
-			float obraSocial, float aportesJub) {
+	private int fechaEmision;
+	private double sBruto;
+	private double sNeto;
+	private double obraSocial;
+	private double aportesJub;
+	
+	public ReciboDeHaberes(String nombreEmp, String direccion, int fechaEmision, double sBruto, double sNeto,
+			double obraSocial, double aportesJub) {
 		super();
 		this.nombreEmp = nombreEmp;
 		this.direccion = direccion;

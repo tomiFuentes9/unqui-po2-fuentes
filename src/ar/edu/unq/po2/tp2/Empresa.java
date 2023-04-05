@@ -1,5 +1,4 @@
 package ar.edu.unq.po2.tp2;
-import ar.edu.unq.po2.tp2.*;
 import java.util.*;
 import ar.edu.unq.po2.tp2.*;
 
@@ -16,9 +15,7 @@ public class Empresa {
 	}
 	
 	public void generarReciboDeHaberes(Empleado emp) {
-		/*if (emp.getSueldoBasico() > 200) {
-			//como instanciar bien
-		}*/
+		emp.generarRecibo();       //ReciboDeHaberes res =;instanciar recibo de haberes emp perm (emp.nombre(), emp.calcularEdad()   )
 	}
 	
 	public float calcularMontoTotalBruto() {

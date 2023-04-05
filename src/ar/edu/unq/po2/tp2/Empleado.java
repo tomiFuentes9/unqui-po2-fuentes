@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp2;
 import ar.edu.unq.po2.tp2.*;
-import java.util.Date;
+import java.util.*;
 
 
 public abstract class Empleado {
@@ -14,14 +14,21 @@ public abstract class Empleado {
 		return añoActual - this.fechaDeNacimiento; 
 	}
 	
+	public abstract void generarRecibo();
+	
 	public abstract double calcularBruto();
 	
 	public abstract double calcularRetenciones();
 	
 	public abstract double calcularNeto();
 	
+	public double calcularObraSocial() {
+		return this.baseObraSocial();
+	}
 	
-	public double calcBaseObraSocial() {
+	public abstract double aportesJubilatorios();
+	
+	public double baseObraSocial() {
 		return (this.calcularBruto() * 0.10);
 	}
 	

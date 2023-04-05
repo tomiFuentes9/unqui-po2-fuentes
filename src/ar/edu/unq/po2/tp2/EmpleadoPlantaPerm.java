@@ -1,12 +1,24 @@
 package ar.edu.unq.po2.tp2;
 import ar.edu.unq.po2.tp2.*;
+import java.util.*;
+
 
 public class EmpleadoPlantaPerm extends Empleado{
 	private double cantHijos;
 	private double antiguedad;
 	
+	@Override
+	public void generarRecibo(){
+		Tango sistema = new TangoPerm();
+		sistema.generarRecibo(this);//generar aca el recibo
+	}
+	
 	public double calcularSalarioFamiliar() {
-		return (cantHijos * 150) + this.calcularAntiguedad() + this.calcularSiCasado();
+		return this.montoPorHijos() + this.calcularAntiguedad() + this.calcularSiCasado();
+	}
+	
+	public double montoPorHijos() {
+		return cantHijos * 150;
 	}
 	
 	public float calcularSiCasado() {
@@ -35,16 +47,20 @@ public class EmpleadoPlantaPerm extends Empleado{
     	return this.getSueldoBasico() + this.calcularSalarioFamiliar();
     }
 	
-	
+	@Override
 	public double aportesJubilatorios() {
 		return(this.calcularBruto() * 0.15);
 	}
 	
 	@Override
 	public double calcularRetenciones() {
-		return (this.calcBaseObraSocial()) + (cantHijos * 20) + (this.aportesJubilatorios());
+		return (this.calcularObraSocial()) + (this.aportesJubilatorios());
 	}
 	
+	@Override
+	public double calcularObraSocial() {
+		return super.calcularObraSocial() + cantHijos * 20;
+	}
 	
 	@Override
 	public double calcularNeto() {

@@ -1,9 +1,18 @@
 package ar.edu.unq.po2.tp2;
 import ar.edu.unq.po2.tp2.*;
+import java.util.*;
+
 
 public class EmpleadoPlantaTemp extends Empleado{
 	private String finDesignaciónPlantaTemp;
 	private float cantHorasExtra;
+	
+	
+	@Override
+	public void generarRecibo(){
+		Tango sistema = new TangoTemp();
+		sistema.generarRecibo(this);//generar aca el recibo
+	}
 	
 	
 	@Override
@@ -29,9 +38,12 @@ public class EmpleadoPlantaTemp extends Empleado{
 	
 	@Override
 	public double calcularRetenciones() {
-		return (this.calcBaseObraSocial()) + this.cincuentaOMas() + (this.aportesJubilatorios());
+		return (this.calcularObraSocial()) + this.cincuentaOMas() + (this.aportesJubilatorios());
 	}
 	
+	public double calcularObraSocial() {
+		return super.baseObraSocial() + this.cincuentaOMas();
+	}
 	
 	@Override
 	public double calcularNeto() {

@@ -5,13 +5,21 @@ import java.util.*;
 
 public class EmpleadoPlantaTemp extends Empleado{
 	private String finDesignaciónPlantaTemp;
-	private float cantHorasExtra;
+	private double cantHorasExtra;
 	
 	
+	public EmpleadoPlantaTemp(String nombre, String direccion, String estadoCivil, double fechaDeNacimiento,
+			double sueldoBasico, String finDesignaciónPlantaTemp, double cantHorasExtra) {
+		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
+		this.finDesignaciónPlantaTemp = finDesignaciónPlantaTemp;
+		this.cantHorasExtra = cantHorasExtra;
+	}
+
+
 	@Override
-	public void generarRecibo(){
+	public ReciboDeHaberes generarRecibo(){
 		Tango sistema = new TangoTemp();
-		sistema.generarRecibo(this);//generar aca el recibo
+		return sistema.generarRecibo(this);//generar aca el recibo
 	}
 	
 	
@@ -51,19 +59,12 @@ public class EmpleadoPlantaTemp extends Empleado{
 	}
 	
 	
-	public EmpleadoPlantaTemp(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
-			float sueldoBasico, String finDesignaciónPlantaTemp, float cantHorasExtra) {
-		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
-		this.finDesignaciónPlantaTemp = finDesignaciónPlantaTemp;
-		this.cantHorasExtra = cantHorasExtra;
-	}
-
 
 	public String getFinDesignaciónPlantaTemp() {
 		return finDesignaciónPlantaTemp;
 	}
 
-	public float getCantHorasExtra() {
+	public double getCantHorasExtra() {
 		return cantHorasExtra;
 	}
 	

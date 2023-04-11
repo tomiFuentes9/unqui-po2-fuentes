@@ -5,20 +5,21 @@ import ar.edu.unq.po2.tp2.*;
 
 public class Empresa {
 	private String nombre;
-	private int cuit;
+	private double cuit;
 	private List<Empleado> empleados;
+	private List<ReciboDeHaberes> recibos;
 	
 	public void liquidacionDeSueldos() {
 		for (Empleado empleado : empleados) {
-			this.generarReciboDeHaberes(empleado);
+			recibos.add(this.generarReciboDeHaberes(empleado));
 		}
 	}
 	
-	public void generarReciboDeHaberes(Empleado emp) {
-		emp.generarRecibo();       //ReciboDeHaberes res =;instanciar recibo de haberes emp perm (emp.nombre(), emp.calcularEdad()   )
+	public ReciboDeHaberes generarReciboDeHaberes(Empleado emp) {
+		return emp.generarRecibo();       
 	}
 	
-	public float calcularMontoTotalBruto() {
+	public double calcularMontoTotalBruto() {
 		int res = 0;
 		for(Empleado empleado: empleados) {
 			res += empleado.calcularBruto();
@@ -26,7 +27,7 @@ public class Empresa {
 		return res;
 	}
 	
-	public float calcularMontoTotalRetenciones() {
+	public double calcularMontoTotalRetenciones() {
 		int res = 0;
 		for(Empleado empleado: empleados) {
 			res += empleado.calcularRetenciones();
@@ -34,7 +35,7 @@ public class Empresa {
 		return res;
 	}
 	
-	public float calcularMontoTotalNeto() {
+	public double calcularMontoTotalNeto() {
 		return this.calcularMontoTotalBruto() - this.calcularMontoTotalRetenciones();
 	}
 	
@@ -50,7 +51,7 @@ public class Empresa {
 		return nombre;
 	}
 	
-	public int getCuit() {
+	public double getCuit() {
 		return cuit;
 	}
 	

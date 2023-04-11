@@ -8,13 +8,13 @@ public abstract class Empleado {
 	private String direccion;
 	private String estadoCivil;
 	private double  fechaDeNacimiento; //Es el año unicamente
-	private float  sueldoBasico;
+	private double  sueldoBasico;
 	
 	public double calcularEdad(double añoActual) {
 		return añoActual - this.fechaDeNacimiento; 
 	}
 	
-	public abstract void generarRecibo();
+	public abstract ReciboDeHaberes generarRecibo();
 	
 	public abstract double calcularBruto();
 	
@@ -32,7 +32,7 @@ public abstract class Empleado {
 		return (this.calcularBruto() * 0.10);
 	}
 	
-	public Empleado(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento, float sueldoBasico) {
+	public Empleado(String nombre, String direccion, String estadoCivil, double fechaDeNacimiento, double sueldoBasico) {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -52,7 +52,7 @@ public abstract class Empleado {
 		return estadoCivil;
 	}
 	
-	public float getSueldoBasico() {
+	public double getSueldoBasico() {
 		return sueldoBasico;
 	}
 	

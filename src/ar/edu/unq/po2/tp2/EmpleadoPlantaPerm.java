@@ -8,9 +8,9 @@ public class EmpleadoPlantaPerm extends Empleado{
 	private double antiguedad;
 	
 	@Override
-	public void generarRecibo(){
+	public ReciboDeHaberes generarRecibo(){
 		Tango sistema = new TangoPerm();
-		sistema.generarRecibo(this);//generar aca el recibo
+		return sistema.generarRecibo(this);//generar aca el recibo
 	}
 	
 	public double calcularSalarioFamiliar() {
@@ -68,8 +68,8 @@ public class EmpleadoPlantaPerm extends Empleado{
 	}
 	
 
-	public EmpleadoPlantaPerm(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
-			float sueldoBasico, double cantHijos, double antiguedad) {
+	public EmpleadoPlantaPerm(String nombre, String direccion, String estadoCivil, double fechaDeNacimiento,
+			double sueldoBasico, double cantHijos, double antiguedad) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;

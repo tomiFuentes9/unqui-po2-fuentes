@@ -1,10 +1,7 @@
 package ar.edu.unq.po2.tp2.test;
-import ar.edu.unq.po2.tp2.*;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import ar.edu.unq.po2.tp2.*;
 
 // assertTrue, assertEquals.
 

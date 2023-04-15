@@ -10,7 +10,8 @@ public class ProductoPrimeraNecesidad extends Producto{
 	
 	
 	public double calcPrecio() {
-		return super.calcPrecio() - (super.calcPrecio() * descuento);
+		double precioBase = super.calcPrecio();
+		return  precioBase - (precioBase * descuento);
 	}
 	
 	

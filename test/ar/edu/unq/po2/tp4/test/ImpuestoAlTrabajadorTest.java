@@ -29,11 +29,11 @@ class ImpuestoAlTrabajadorTest {
 		assertEquals(500, trabajador.getTotalPercibido());
 		
 		trabajador.agregarIngreso(ingreso2);
-		assertEquals(750, trabajador.getMontoImponible());
+		assertEquals(750, trabajador.getTotalMontoImponible());
 		
 		trabajador.agregarIngreso(ingresoHE);
 		assertEquals(900, trabajador.getTotalPercibido());
-		assertEquals(750, trabajador.getMontoImponible());
+		assertEquals(750, trabajador.getTotalMontoImponible());
 		assertEquals(15 , trabajador.getImpuestoAPagar());
 		
 	}

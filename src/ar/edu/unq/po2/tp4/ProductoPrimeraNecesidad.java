@@ -1,5 +1,7 @@
 package ar.edu.unq.po2.tp4;
 
+import ar.edu.unq.po2.tp5.Producto;
+
 public class ProductoPrimeraNecesidad extends Producto{
 	private double descuento;
 	

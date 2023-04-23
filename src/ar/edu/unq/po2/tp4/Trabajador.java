@@ -22,7 +22,7 @@ public class Trabajador {
 		return res;
 	}
 	
-	public double getTotalMontoImponible() {
+	public double getMontoImponible() {
 		double res = 0;
 		for(Ingreso ingreso : ingresosPercibidos) {
 			res += ingreso.montoImponible();
@@ -31,6 +31,6 @@ public class Trabajador {
 	}
 	
 	public double getImpuestoAPagar() {
-		return this.getTotalMontoImponible() * 0.02;
+		return this.getMontoImponible() * 0.02;
 	}
 }

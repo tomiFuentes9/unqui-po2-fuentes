@@ -1,6 +1,8 @@
 package ar.edu.unq.po2.tp4;
 import java.util.*;
 
+import ar.edu.unq.po2.tp5.Producto;
+
 public class Supermercado {
 	private String nombre;
 	private String direccion;

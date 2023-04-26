@@ -16,6 +16,14 @@ public class Cliente {
 		this.sueldoNetoMensual = sueldoNetoMensual;
 	}
 	
+	public void solicitudCreditoPersonal() {
+		
+	}
+	
+	public void solicitudCreditoHipotecario() {
+		
+	}
+	
 	public double calcularSueldoAnual() {
 		return sueldoNetoMensual * 12;
 	}

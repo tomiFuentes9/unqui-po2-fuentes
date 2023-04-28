@@ -6,6 +6,8 @@ public class Cliente {
 	private String direccion;
 	private double edad;
 	private double sueldoNetoMensual;
+	private double ahorros; //Para corroborar si recibio la tarasca
+	private PropiedadInmobiliaria jauz;
 	
 	public Cliente(String nombre, String apellido, String direccion, double edad, double sueldoNetoMensual) {
 		super();
@@ -16,14 +18,22 @@ public class Cliente {
 		this.sueldoNetoMensual = sueldoNetoMensual;
 	}
 	
-	public void solicitudCreditoPersonal() {
+	public void recibirGuita(double monto) {
+		ahorros += monto;
+	}
+	
+	public void solicitudCreditoPersonal(double monto, double plazo) {
 		
 	}
 	
-	public void solicitudCreditoHipotecario() {
+	public void solicitudCreditoHipotecario(double monto, double plazo, PropiedadInmobiliaria jauz) {
 		
 	}
 	
+	public double getSueldoNetoMensual() {
+		return sueldoNetoMensual;
+	}
+
 	public double calcularSueldoAnual() {
 		return sueldoNetoMensual * 12;
 	}

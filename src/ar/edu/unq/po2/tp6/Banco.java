@@ -10,14 +10,24 @@ public class Banco {
 	public Banco(List<Cliente> clientes) {
 		super();
 		this.clientes = new ArrayList<Cliente>();
+		this.solicitudes = new ArrayList<SolicitudDeCredito>();
 	}
 	
-	public void solicitudDeCreditoPersonal(Cliente cl) {
-		
+	public void recibirSolicitudCred(SolicitudDeCredito sc) {
+		solicitudes.add(sc);
 	}
 	
-	public void solicitudDeCreditoHipotecario(Cliente cl) {
-		
+	
+	public void otorgarCreditoSiCorresponde(SolicitudDeCredito sc) {
+		if (this.verificarSolicitud(sc)) {
+			sc.getSolicitante().recibirGuita(sc.getMonto());
+		} else {
+			//error("No cumplis los requicitos para recibir el credito");
+		}
+	}
+
+	public boolean verificarSolicitud(SolicitudDeCredito sc) {
+		return sc.esAceptable();
 	}
 
 

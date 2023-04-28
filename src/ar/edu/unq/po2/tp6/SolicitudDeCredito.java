@@ -12,7 +12,19 @@ public abstract class SolicitudDeCredito {
 		this.plazo = plazo;
 	}
 	
+	public double valorDeCuota() {
+		return monto / plazo ;
+	}
+	
 	public abstract boolean esAceptable();
+
+	public Cliente getSolicitante() {
+		return solicitante;
+	}
+
+	public double getMonto() {
+		return monto;
+	}
 	
 	
 }

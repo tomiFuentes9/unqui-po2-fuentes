@@ -22,7 +22,7 @@ public class Banco {
 		if (this.verificarSolicitud(sc)) {
 			sc.getSolicitante().recibirGuita(sc.getMonto());
 		} else {
-			//error("No cumplis los requicitos para recibir el credito");
+			throw new RuntimeException("No fue aprobada tu solicitud para el credito que requeriste");
 		}
 	}
 

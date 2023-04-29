@@ -1,9 +1,10 @@
 package ar.edu.unq.po2.tp6;
 
 public abstract class SolicitudDeCredito {
-	private Cliente solicitante;
-	private double monto;
-	private double plazo;
+	protected Cliente solicitante;
+	protected double monto;
+	protected double plazo;
+	protected double porcentajeRequerido;
 	
 	public SolicitudDeCredito(Cliente solicitante, double monto, double plazo) {
 		super();
@@ -12,12 +13,6 @@ public abstract class SolicitudDeCredito {
 		this.plazo = plazo;
 	}
 	
-	public double valorDeCuota() {
-		return monto / plazo ;
-	}
-	
-	public abstract boolean esAceptable();
-
 	public Cliente getSolicitante() {
 		return solicitante;
 	}
@@ -25,8 +20,16 @@ public abstract class SolicitudDeCredito {
 	public double getMonto() {
 		return monto;
 	}
+
+	public double valorDeCuota() {
+		return monto / plazo ;
+	}
 	
+	public abstract boolean esAceptable();
 	
+	public boolean cuotaNoSuperaPorcentajeRequerido() {
+		return this.valorDeCuota() <=  solicitante.getSueldoNetoMensual() * porcentajeRequerido;
+	}
 }
 
 

@@ -2,22 +2,18 @@ package ar.edu.unq.po2.tp6;
 
 public class SolicitudDeCreditoPers extends SolicitudDeCredito {
 	private double montoRequerido;
-	private double porcentajeRequerido;
 	
-	public SolicitudDeCreditoPers(Cliente solicitante, double monto, double plazo) {
+	public SolicitudDeCreditoPers(Cliente solicitante, double monto, double plazo, double montoRequerido) {
 		super(solicitante, monto, plazo);
+		this.montoRequerido = montoRequerido;
 	}
-	
+
 	public boolean esAceptable() {
 		return this.ingresosAnualesMayoresAMontoRequerido() & this.cuotaNoSuperaPorcentajeRequerido();
 	}
 	
 	public boolean ingresosAnualesMayoresAMontoRequerido() {
-		return this.getSolicitante().calcularSueldoAnual() >= montoRequerido;
-	}
-	
-	public boolean cuotaNoSuperaPorcentajeRequerido() {
-		return this.valorDeCuota() <=  this.getSolicitante().getSueldoNetoMensual() * porcentajeRequerido;
+		return solicitante.calcularSueldoAnual() >= montoRequerido;
 	}
 		
 }

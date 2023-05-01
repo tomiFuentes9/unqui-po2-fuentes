@@ -5,9 +5,9 @@ public class SolicitudDeCreditoHipo extends SolicitudDeCredito{
 	private double porcValorFiscalRequerido;
 
 	
-	public SolicitudDeCreditoHipo(Cliente solicitante, double monto, double plazo, PropiedadInmobiliaria inmu,
-			double porcValorFiscalRequerido) {
-		super(solicitante, monto, plazo);
+	public SolicitudDeCreditoHipo(Cliente solicitante, double monto, double plazo, double porcentajeRequerido,
+			PropiedadInmobiliaria inmu, double porcValorFiscalRequerido) {
+		super(solicitante, monto, plazo, porcentajeRequerido);
 		this.inmu = inmu;
 		this.porcValorFiscalRequerido = porcValorFiscalRequerido;
 	}

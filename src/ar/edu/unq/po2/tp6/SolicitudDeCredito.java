@@ -1,18 +1,19 @@
 package ar.edu.unq.po2.tp6;
 
-public abstract class SolicitudDeCredito {
+public abstract class SolicitudDeCredito{
 	protected Cliente solicitante;
 	protected double monto;
 	protected double plazo;
 	protected double porcentajeRequerido;
 	
-	public SolicitudDeCredito(Cliente solicitante, double monto, double plazo) {
+	public SolicitudDeCredito(Cliente solicitante, double monto, double plazo, double porcentajeRequerido) {
 		super();
 		this.solicitante = solicitante;
 		this.monto = monto;
 		this.plazo = plazo;
+		this.porcentajeRequerido = porcentajeRequerido;
 	}
-	
+
 	public Cliente getSolicitante() {
 		return solicitante;
 	}

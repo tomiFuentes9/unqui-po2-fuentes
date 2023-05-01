@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp6;
 
-public class Cliente {
+public class Cliente implements Desarrollables{
 	private String nombre;
 	private String apellido;
 	private String direccion;
@@ -27,12 +27,16 @@ public class Cliente {
 		ahorros += monto;
 	}
 	
-	public void solicitudCreditoPersonal(double monto, double plazo) {
-		
+	public void desarrollarSolicitudPers(double monto, double plazo, Cliente cl) {
+		banco.desarrollarSolicitudPers(monto, plazo, cl);
 	}
 
-	public void solicitudCreditoHipotecario(double monto, double plazo, PropiedadInmobiliaria jauz) {
-		
+	public void desarrollarSolicitudHipo(double monto, double plazo, Cliente cl, PropiedadInmobiliaria jauz) {
+		banco.desarrollarSolicitudHipo(monto, plazo, cl, jauz);
+	}
+	
+	public double revisarSaldo() {
+		return ahorros;
 	}
 	
 	public double getSueldoNetoMensual() {

@@ -3,8 +3,9 @@ package ar.edu.unq.po2.tp6;
 public class SolicitudDeCreditoPers extends SolicitudDeCredito {
 	private double montoRequerido;
 	
-	public SolicitudDeCreditoPers(Cliente solicitante, double monto, double plazo, double montoRequerido) {
-		super(solicitante, monto, plazo);
+	public SolicitudDeCreditoPers(Cliente solicitante, double monto, double plazo, double porcentajeRequerido,
+			double montoRequerido) {
+		super(solicitante, monto, plazo, porcentajeRequerido);
 		this.montoRequerido = montoRequerido;
 	}
 

@@ -42,6 +42,15 @@ public class Banco implements Desarrollables{
 			throw new RuntimeException("No fue aprobada tu solicitud");
 		}
 	}
+	
+	public double montoTotalADesembolsar() {
+		List <SolicitudDeCredito> solicitudesAceptadas = solicitudes.stream().filter(sc -> sc.esAceptable()).toList();
+		double total = 0;
+		for(SolicitudDeCredito sc : solicitudesAceptadas) {
+			total += sc.getMonto();
+		}
+		return total;
+	}
 
 	public boolean verificarSolicitud(SolicitudDeCredito sc) {
 		return sc.esAceptable();
